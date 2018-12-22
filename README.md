@@ -29,5 +29,5 @@ You can generate the file with:
 1. pip freeze > requirements.txt.
 
 Push to github: #CHANGE
-1. git push https://github.com/Bob-78/Twitter-bot-cats.git master
+1. git push https://github.com/Bob-78/repository_name.git master
 
