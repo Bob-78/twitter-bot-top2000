@@ -4,7 +4,6 @@ import api
 import helpers
 from definitions import message_hashtags, messages, my_user_id
 import pandas
-import medialinks
 import urllib.request
 import time
 import tweepy
@@ -31,14 +30,10 @@ def tweet_body(year):
     year = df.year.iloc[x]
     title = df.title.iloc[x]
     ranking = df.ranking.iloc[x]
+    spotify_link = df.spotify_link.iloc[x]
+    youtube_link = df.youtube_link.iloc[x]
 
     funny_text = messages[helpers.random_list_number(messages)] 
-
-    query = artist + " " + title
-
-    spotify_link = medialinks.get_spotify_url(query)
-
-    youtube_link = medialinks.get_youtube_url(query)
 
     message = "Op plek {}, {} uit {}!\n\
 --> {} - {}\n\
