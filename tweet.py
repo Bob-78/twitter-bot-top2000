@@ -38,7 +38,7 @@ def tweet_body(year):
     message = "Op plek {}, {} uit {}!\n\
 --> {} - {}\n\
 Luister met Spotify: {}\n\
-Luister op Youtube: {}\n\
+Kijk en luister op Youtube: {}\n\
 {}"\
     .format\
     (ranking, funny_text, year, 
