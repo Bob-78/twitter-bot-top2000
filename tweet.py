@@ -10,7 +10,7 @@ import time
 import tweepy
 import follow
 
-
+# not used
 def get_image(youtube_link):
     youtube_id = youtube_link.split("=")[1]
 
