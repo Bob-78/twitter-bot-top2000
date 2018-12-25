@@ -32,4 +32,6 @@ while True:
     
     # follow some people
     follow.now(definitions.people_to_follow)
+    
+    unfollow_non_friends(definitions.non_friends_to_unfollow)
 
