@@ -3,7 +3,7 @@
 import tweet
 import follow
 import time
-from definitions import base_url, interval_between_tweets
+from definitions import interval_between_tweets
 
 
 while True:
