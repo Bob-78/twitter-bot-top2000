@@ -23,8 +23,11 @@ while True:
         #tweet
         tweet.post(message)
         
-        print("Tweeted succesfully. Waiting {} secs.".format(definitions.interval_between_tweets))
-        time.sleep(definitions.interval_between_tweets - (definitions.people_to_follow * definitions.interval_between_follows))
+        # sleep interval between tweets, minus waiting time between follows
+        sleep_time = (definitions.interval_between_tweets - (definitions.people_to_follow * definitions.interval_between_follows/definitions.follow_people_every_cycles))
+        
+        print("Tweeted succesfully. Waiting {} secs.".format(sleep_time))
+        time.sleep(sleep_time)
 
     
     # follow some people
