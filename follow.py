@@ -26,7 +26,7 @@ def now(amount):
 	            print("userid {} followed".format(userid))
 	            print("Waiting a bit")
 	    
-	            time.sleep(definitions.interval_between_follows) #Tweet every 15 minutes
+	            #time.sleep(definitions.interval_between_follows) #Tweet every 15 minutes
 	    
 	        except:
 	    
@@ -58,7 +58,7 @@ def unfollow_non_friends(amount):
                 # unfollows non follower.
                 my_api.destroy_friendship(f)
                 print('...Unfollowed user {}. Waiting a bit.'.format(f))
-                time.sleep(10)
+                #time.sleep(10)
             except:
                 print("...could not unfollow user {}".format(f))
                 continue
