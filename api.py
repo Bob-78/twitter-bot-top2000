@@ -2,11 +2,16 @@
 
 import tweepy
 from os import environ
+import secrets 
 
-consumer_key = environ["consumer_key"]
-consumer_secret = environ["consumer_secret"]
-access_token = environ["access_token"]
-access_secret = environ["access_secret"]
+try:
+    consumer_key = environ["consumer_key"]
+    consumer_secret = environ["consumer_secret"]
+    access_token = environ["access_token"]
+    access_secret = environ["access_secret"]
+    
+except:
+    
 
 #create an OAuthHandler instance. Twitter requires all requests to use OAuth for authentication
 def make_api():

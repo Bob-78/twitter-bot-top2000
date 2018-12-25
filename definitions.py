@@ -34,5 +34,11 @@ messages = [
 "onze lievelingsplaat"
 ]
 
-# define interval between tweets
+# define interval between tweets, uncorrected
 interval_between_tweets = 300
+
+interval_between_follows = 10
+
+people_to_follow = 1
+
+follow_people_every_cycles = 3

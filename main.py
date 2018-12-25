@@ -3,14 +3,13 @@
 import tweet
 import follow
 import time
-from definitions import interval_between_tweets
+import definitions
 
 
 while True:
     
-    for i in range(0, 3):
+    for i in range(0, definitions.follow_people_every_cycles):
         
-        #try:
         # get latest rank from latest tweet
         last_rank = tweet.get_last_tweet_rank()
         print("latest rank is: {}".format(last_rank))
@@ -24,14 +23,10 @@ while True:
         #tweet
         tweet.post(message)
         
-        print("Tweeted succesfully. Waiting {} secs.".format(interval_between_tweets))
-        time.sleep(interval_between_tweets)
-    
-        #except:
-        #    print("Could not tweet. Waiting 300 secs.")
-        #    time.sleep(300)
-        #    pass
+        print("Tweeted succesfully. Waiting {} secs.".format(definitions.interval_between_tweets))
+        time.sleep(definitions.interval_between_tweets - (definitions.people_to_follow * definitions.interval_between_follows))
+
     
     # follow some people
-    follow.now(1)
+    follow.now(definitions.people_to_follow)
 

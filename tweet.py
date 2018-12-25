@@ -2,7 +2,7 @@
 
 import api
 import helpers
-from definitions import message_hashtags, messages, my_user_id
+import definitions
 import pandas
 import urllib.request
 import time
@@ -34,7 +34,7 @@ def tweet_body(year):
     spotify_link = df.spotify_link.iloc[x]
     youtube_link = df.youtube_link.iloc[x]
 
-    funny_text = messages[helpers.random_list_number(messages)] 
+    funny_text = definitions.messages[helpers.random_list_number(definitions.messages)] 
 
     message = "\
 Op plek {}, {} uit {}!\n\
@@ -47,9 +47,9 @@ Kijk en luister op Youtube: {}\n\
     artist, title, 
     spotify_link, 
     youtube_link, 
-    message_hashtags)
+    definitions.message_hashtags)
 
-    print(message)
+    print(" tweeting message:\n{}".format(message))
     
     return message
     
@@ -73,7 +73,7 @@ def get_last_tweet_rank():
     my_api = api.make_api()
 
     # get the last tweet
-    tweet = my_api.user_timeline(id = my_user_id, count = 1)[0].text
+    tweet = my_api.user_timeline(id = definitions.my_user_id, count = 1)[0].text
     
     # use a regex to get the first number from the string
     plek =  re.search(r'\d+', tweet).group()
