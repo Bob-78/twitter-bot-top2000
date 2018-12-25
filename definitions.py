@@ -1,11 +1,5 @@
 # definitions.py
 
-# search query to find pictures. No AND operator or similar needed.
-search_query = [
-"cute",
-"feline"
-]
-
 # twitter user id
 my_user_id = 1075733110455762944
 
@@ -40,9 +34,5 @@ messages = [
 "onze lievelingsplaat"
 ]
 
- 
-
-# DO NOT EDIT THIS SECTION
-
-#join the query words, separated by %20
-base_url = "https://pixabay.com/en/photos/{}/?image_type=photo&pagi=".format("%20".join(search_query))  
+# define interval between tweets
+interval_between_tweets = 300

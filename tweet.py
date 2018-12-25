@@ -8,6 +8,7 @@ import urllib.request
 import time
 import tweepy
 import follow
+import re
 
 # not used
 def get_image(youtube_link):
@@ -35,7 +36,8 @@ def tweet_body(year):
 
     funny_text = messages[helpers.random_list_number(messages)] 
 
-    message = "Op plek {}, {} uit {}!\n\
+    message = "\
+Op plek {}, {} uit {}!\n\
 --> {} - {}\n\
 Luister met Spotify: {}\n\
 Kijk en luister op Youtube: {}\n\
@@ -71,12 +73,14 @@ def get_last_tweet_rank():
     my_api = api.make_api()
 
     # get the last tweet
-    tweet = my_api.user_timeline(id = my_user_id, count = 1)[0]
+    tweet = my_api.user_timeline(id = my_user_id, count = 1)[0].text
     
-    plek = tweet.text[8:12]
+    # use a regex to get the first number from the string
+    plek =  re.search(r'\d+', tweet).group()
+    
+    # plek = tweet.text[8:12] #old way to get first number
     
     return plek
-
 
 
 
