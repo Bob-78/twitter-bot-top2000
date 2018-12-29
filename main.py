@@ -27,7 +27,7 @@ def tweet_func():
 
 while True:
     
-    for i in range(0,3):
+    for i in range(0,5):
         
         tweet_func()
         
@@ -35,7 +35,7 @@ while True:
         
     follow.unfollow_non_friends(1)
     
-    for i in range(0,3):
+    for i in range(0,5):
         
         tweet_func()
         
@@ -43,7 +43,7 @@ while True:
         
     follow.now(definitions.people_to_follow)
     
-    for i in range(0,3):
+    for i in range(0,5):
         
         tweet_func()
         
